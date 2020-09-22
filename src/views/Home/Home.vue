@@ -66,7 +66,11 @@
       <b-spinner>Loading...</b-spinner>
     </div>
     <div class="mt-2 mb-4" align="center">
-      <a class="bibit-link-dark" href="javascript:void(0);" id="see-more" v-on:click="seeMore"
+      <a
+        class="bibit-link-dark"
+        href="javascript:void(0);"
+        id="see-more"
+        v-on:click="seeMore"
         >see more</a
       >
     </div>
@@ -112,8 +116,13 @@ export default {
           if (this.searchQuery !== "") {
             this.loading = true;
             this.productList = [];
+            // kalo udah ada category yang dipilih, masukin juga
+
             axios
-              .get(`${baseUrl}/search-products/${this.searchQuery}`)
+              .post(
+                `${baseUrl}/search-products-by-category/${this.selectedCategory}`,
+                { search_query: this.searchQuery }
+              )
               .then((res) => {
                 this.productList = res.data.data;
               })
@@ -229,7 +238,9 @@ export default {
       this.loading = true;
       this.selectedCategory = category_id;
       axios
-        .get(`${baseUrl}/search-products-by-category/${category_id}`)
+        .post(`${baseUrl}/search-products-by-category/${category_id}`, {
+          search_query: this.searchQuery,
+        })
         .then((res) => {
           this.productList = res.data.data;
         })
