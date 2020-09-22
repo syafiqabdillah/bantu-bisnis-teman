@@ -1,7 +1,6 @@
 <template>
   <div>
     <div id="product-detail">
-      
       <div class="product-img-container">
         <img :src="product.imageUrl" :alt="product.namaProduk" />
       </div>
@@ -15,8 +14,10 @@
       </div>
     </div>
     <hr />
-    <router-link :to="'/store/' + toko.id"><p>{{ toko.nama }}</p></router-link>
-    
+    <router-link :to="'/store/' + toko.id"
+      ><p>{{ toko.nama }}</p></router-link
+    >
+
     <p>
       <b-icon icon="person-fill" /> {{ product.namaSeller }}
       <b-icon icon="geo-alt" /> {{ toko.alamat }}
@@ -58,6 +59,8 @@
 
 <script>
 import axios from "axios";
+import { baseUrl } from "@/config";
+
 export default {
   name: "KontakToko",
   data() {
@@ -89,10 +92,13 @@ export default {
       return true;
     },
     open(olshop, username) {
-      if (username.includes("@")){
-        username = username.substring(1);
-      }
-      window.open(`${this.baseOlshopUrl[olshop]}${username}`, "_blank");
+      // add ecom view to database
+      axios.post(`${baseUrl}/add-ecom-view/${this.toko.id}`).finally(() => {
+        if (username.includes("@")) {
+          username = username.substring(1);
+        }
+        window.open(`${this.baseOlshopUrl[olshop]}${username}`, "_blank");
+      });
     },
     priceFormat(price) {
       if (price !== "0") {

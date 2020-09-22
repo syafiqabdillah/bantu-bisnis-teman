@@ -34,6 +34,10 @@
               ></b-form-input>
             </b-form-group>
 
+            <div class="mt-1 mb-2">
+              Cek langsung tokonya di
+            </div>
+
             <div class="social-media">
               <div
                 id="tokopedia"
@@ -66,6 +70,10 @@
                 />
               </div>
             </div>
+
+            <small class="ecom-clicked">
+              Telah dikunjungi {{ ecomViewSum }} kali
+            </small>
           </b-form>
           <div align="center">
             Bagikan ke teman melalui
@@ -95,6 +103,8 @@
 </template>
 
 <script>
+import axios from "axios";
+import { baseUrl } from "@/config";
 import { isMobile } from "../../mixins";
 
 export default {
@@ -106,6 +116,7 @@ export default {
   components: {},
   data() {
     return {
+      ecomViewSum: 0,
       imgTokopedia: require("@/assets/img/tokopedia.png"),
       imgShopee: require("@/assets/img/shopee.png"),
       imgInstagram: require("@/assets/img/instagram.png"),
@@ -133,6 +144,13 @@ export default {
       ],
     };
   },
+  created() {
+    axios
+      .get(`${baseUrl}/ecom-view-sum/${this.$route.params.id}`)
+      .then((res) => {
+        this.ecomViewSum = res.data["view_sum"];
+      });
+  },
   methods: {
     linkValid(olshop, username) {
       if (username === "" || username === "-") {
@@ -146,7 +164,15 @@ export default {
       return true;
     },
     open(olshop, username) {
-      window.open(`${this.baseOlshopUrl[olshop]}${username}`, "_blank");
+      // add ecom view to database
+      axios
+        .post(`${baseUrl}/add-ecom-view/${this.$route.params.id}`)
+        .finally(() => {
+          if (username.includes("@")) {
+            username = username.substring(1);
+          }
+          window.open(`${this.baseOlshopUrl[olshop]}${username}`, "_blank");
+        });
     },
   },
   computed: {
@@ -191,6 +217,9 @@ export default {
 }
 .logo:hover {
   cursor: pointer;
+}
+.ecom-clicked {
+  color: grey;
 }
 @media (max-width: 480px) {
   .profile {
