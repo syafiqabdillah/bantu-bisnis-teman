@@ -1,16 +1,16 @@
-/* :root {
+:root {
     --bibit-primary: #424874;
     --bibit-secondary: #c3aed6;
     --bibit-accent: #c3aed6;
     --bibit-bg: #f3e6e3;
-  } */
+  }
 
-:root {
+/* :root {
   --bibit-primary: #132743;
   --bibit-secondary: #407088;
   --bibit-accent: #70adb5;
   --bibit-bg: #f3e6e3;
-}
+} */
 
 /* text */
 .bibit-text-dark {
