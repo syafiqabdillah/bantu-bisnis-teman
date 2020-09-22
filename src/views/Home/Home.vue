@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="jumbo">
+    <div class="jumbo bibit-primary">
       <h1 class="jumbo-title">
         <b-icon class="title-icon" icon="cart3"></b-icon>Bantuin Bisnis Teman
       </h1>
@@ -22,14 +22,14 @@
         <span v-for="category in computedCategoryList" :key="category.id">
           <a
             v-if="selectedCategory === category.id"
-            class="selected-category"
+            class="selected-category bibit-selected-link"
             v-on:click="searchByCategory(category.id)"
             >{{ category.nama }}</a
           >
 
           <a
             v-else
-            class="category"
+            class="category bibit-link"
             v-on:click="searchByCategory(category.id)"
             >{{ category.nama }}</a
           >
@@ -66,7 +66,7 @@
       <b-spinner>Loading...</b-spinner>
     </div>
     <div class="mt-2 mb-4" align="center">
-      <a href="javascript:void(0);" id="see-more" v-on:click="seeMore"
+      <a class="bibit-link-dark" href="javascript:void(0);" id="see-more" v-on:click="seeMore"
         >see more</a
       >
     </div>
@@ -75,9 +75,9 @@
 
 <script>
 import KontakToko from "@/components/KontakToko.vue";
-import ProductItem from "./Home/ProductItem";
+import ProductItem from "./ProductItem";
 import axios from "axios";
-import { baseUrl } from "../config/index.js";
+import { baseUrl } from "../../config";
 
 export default {
   name: "Home",
@@ -276,9 +276,7 @@ export default {
   letter-spacing: 0.5px;
   color: #c3aed6;
 }
-.selected-category {
-  color: white;
-}
+
 .category:hover {
   color: #dea5a4;
   cursor: pointer;

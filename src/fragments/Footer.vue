@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer bibit-footer">
     <div id="copyright">
       © 2020, Bantuin Bisnis Teman.
     </div>
@@ -18,8 +18,6 @@ export default {
 
 <style lang="css" scoped>
 .footer {
-  background-color: #424874;
-  color: white;
   height: 50px;
   display: flex;
   align-items: center;

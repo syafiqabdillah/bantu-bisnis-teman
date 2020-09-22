@@ -3,7 +3,7 @@
     <div class="login-container">
       <b-row>
         <b-col cols="12" md="12" lg="6">
-          <div class="login-image">
+          <div class="login-image bibit-text-dark">
             <h2>Punya Saran Buat Bibit?</h2>
             <p>tuliskan saran kamu untuk bibit yang lebih baik</p>
             <br />
@@ -54,7 +54,7 @@
                     @verify="onCaptchaVerified"
                   />
                 </div>
-                <b-button class="btn-saran" block type="submit">Kirim</b-button>
+                <b-button class="btn-saran bibit-btn" block type="submit">Kirim</b-button>
               </b-form>
             </div>
           </b-card>
@@ -164,8 +164,6 @@ export default {
   margin: 64px 128px;
 }
 .btn-saran {
-  background-color: #424874;
-  border: 0;
   margin-top: 16px;
   margin-bottom: 16px;
   font-size: 1.5rem;

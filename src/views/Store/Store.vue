@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="jumbo" v-if="!loading">
+    <div class="jumbo bibit-primary" v-if="!loading">
       <h2 class="jumbo-title">
         <b-icon font-scale="2" icon="shop"></b-icon>
         <br />

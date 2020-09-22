@@ -1,6 +1,6 @@
 <template>
   <div class="profile">
-    <div class="jumbo">
+    <div class="jumbo bibit-primary">
       <h2 class="jumbo-title">
         <b-icon class="seen-icon" icon="shop"></b-icon>
         Profil Toko <br />
@@ -32,10 +32,10 @@
 </template>
 
 <script>
-import { isLoggedIn, getCookie, parseJwt } from "../mixins/index";
-import { baseUrl } from "../config/index.js";
-import ProfileToko from "./ProfilePage/ProfileToko";
-import ListProdukToko from "./ProfilePage/ListProdukToko";
+import { isLoggedIn, getCookie, parseJwt } from "../../mixins";
+import { baseUrl } from "../../config";
+import ProfileToko from "./ProfileToko";
+import ListProdukToko from "./ListProdukToko";
 import axios from "axios";
 
 export default {

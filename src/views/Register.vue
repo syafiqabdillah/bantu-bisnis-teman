@@ -3,7 +3,7 @@
     <div class="login-container">
       <b-row>
         <b-col cols="12" md="12" lg="6">
-          <div class="login-image">
+          <div class="login-image bibit-text-dark">
             <h2>Bantuin Bisnis Teman</h2>
             <p>Kalau bisa beli lewat teman sendiri, kenapa nggak?</p>
             <img :src="imageSource" alt="One person" />
@@ -86,12 +86,12 @@
                   </b-form-invalid-feedback>
                 </b-form-group>
 
-                <b-button class="btn-login" block type="submit"
+                <b-button class="btn-login bibit-btn" block type="submit"
                   >Register</b-button
                 >
               </b-form>
               <div class="login-now">
-                <a href="/login">Sudah punya akun? Login sekarang</a>
+                <a class="bibit-link-dark" href="/login">Sudah punya akun? Login sekarang</a>
               </div>
             </div>
           </b-card>

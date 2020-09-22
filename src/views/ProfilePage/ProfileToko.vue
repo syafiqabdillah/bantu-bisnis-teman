@@ -99,7 +99,7 @@
               </b-input-group>
             </b-form-group>
 
-            <b-button class="btn-update" block type="submit"
+            <b-button class="btn-update bibit-btn-small" block type="submit"
               >Update Toko</b-button
             >
           </b-form>

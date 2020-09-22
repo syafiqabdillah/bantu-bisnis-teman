@@ -1,5 +1,5 @@
 <template>
-  <div id="nav">
+  <div class="bibit-nav">
     <b-navbar class="navbar" toggleable="sm" type="dark">
       <b-navbar-brand>{{ navBrand }}</b-navbar-brand>
 
@@ -13,7 +13,9 @@
             <router-link to="/profile">Halo, {{ nama }}</router-link>
           </b-nav-item>
 
-          <b-nav-item id="divider" v-if="isLoggedIn() && !isMobileSreen">|</b-nav-item>
+          <b-nav-item id="divider" v-if="isLoggedIn() && !isMobileSreen"
+            >|</b-nav-item
+          >
 
           <b-nav-item>
             <router-link to="/">Beranda</router-link>
@@ -46,7 +48,7 @@ import {
   parseJwt,
   setCookie,
   isLoggedIn,
-  isMobile
+  isMobile,
 } from "../mixins/index";
 export default {
   name: "Navbar",
@@ -65,7 +67,7 @@ export default {
     },
     isMobileSreen() {
       return isMobile();
-    }
+    },
   },
   methods: {
     logout() {
@@ -80,22 +82,6 @@ export default {
 </script>
 
 <style scoped>
-#nav {
-  background-color: #424874;
-  color: white;
-}
-#nav a {
-  font-weight: normal;
-  color: #c3aed6;
-}
-
-#nav a:hover {
-  color: #dea5a4;
-}
-
-#nav a.router-link-exact-active {
-  color: #ffffff;
-}
 .greetings {
   color: #f3e6e3;
 }

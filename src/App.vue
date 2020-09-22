@@ -29,6 +29,8 @@ export default {
 </script>
 
 <style>
+@import "./assets/css/style.css";
+
 html,
 body {
   height: 100%;

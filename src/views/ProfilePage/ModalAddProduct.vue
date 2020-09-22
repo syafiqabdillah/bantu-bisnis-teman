@@ -1,7 +1,7 @@
 <template>
   <div>
     <div align="center">
-      <b-button class="add-product" block v-on:click="showFormAddProduct()">
+      <b-button class="add-product bibit-btn-small" block v-on:click="showFormAddProduct()">
         <b-icon class="add-product-icon" icon="plus"></b-icon>Tambah Produk
       </b-button>
     </div>

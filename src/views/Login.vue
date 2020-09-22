@@ -3,7 +3,7 @@
     <div class="login-container">
       <b-row>
         <b-col cols="12" md="12" lg="6">
-          <div class="login-image">
+          <div class="login-image bibit-text-dark">
             <h2>Bantuin Bisnis Teman</h2>
             <p>Kalau bisa beli lewat teman sendiri, kenapa nggak?</p>
             <br>
@@ -41,10 +41,10 @@
                     placeholder="Your password"
                   ></b-form-input>
                 </b-form-group>
-                <b-button class="btn-login" block type="submit">Login</b-button>
+                <b-button class="bibit-btn btn-login" block type="submit">Login</b-button>
               </b-form>
               <div class="register-now">
-                <a href="/register">Belum punya akun? Daftar sekarang</a>
+                <a class="bibit-link-dark" href="/register">Belum punya akun? Daftar sekarang</a>
               </div>
               <!-- <hr>
               <div align="center" v-on:click="getGoogleToken">
@@ -134,26 +134,18 @@ export default {
   margin: 128px;
 }
 .btn-login {
-  background-color: #424874;
-  border: 0;
   margin-top: 32px;
   margin-bottom: 16px;
-  font-size: 1.5rem;
 }
-.btn-login:hover {
-  background-color: #8675a9;
-}
+
 .register-now {
   text-align: center;
   font-size: 14px;
 }
-.register-now a {
-  color: #424874;
-}
+
 .login-image {
   padding-top: 16px;
   padding-bottom: 8px;
-  color: #424874;
 }
 @media (max-width: 480px) {
   .login-container {
