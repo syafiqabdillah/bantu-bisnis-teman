@@ -56,7 +56,7 @@ export default {
       axios
         .get(`${baseUrl}/view-sum/${this.product.id}`)
         .then((res) => (this.view_sum = res.data.view_sum));
-    }, 5000);
+    }, 10000);
   },
   methods: {
     priceFormat(price) {

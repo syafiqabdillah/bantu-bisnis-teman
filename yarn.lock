@@ -8301,6 +8301,11 @@ vue-functional-data-merge@^3.1.0:
   resolved "https://registry.yarnpkg.com/vue-functional-data-merge/-/vue-functional-data-merge-3.1.0.tgz#08a7797583b7f35680587f8a1d51d729aa1dc657"
   integrity sha512-leT4kdJVQyeZNY1kmnS1xiUlQ9z1B/kdBFCILIjYYQDqZgLqCLa0UhjSSeRX6c3mUe6U5qYeM8LrEqkHJ1B4LA==
 
+vue-google-adsense@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/vue-google-adsense/-/vue-google-adsense-1.8.3.tgz#c7f96e0a6db7484ac9857b8c3196d3c907d23e7a"
+  integrity sha512-+2Ofu0p4hjJuvbilswnarrFc+F4Tqd7IXbvsSzFY82r8p6TT4Hb+5nokrous0XXanEk5IKJIjE9ApD2NPsS8bg==
+
 vue-google-oauth2@^1.5.5:
   version "1.5.5"
   resolved "https://registry.yarnpkg.com/vue-google-oauth2/-/vue-google-oauth2-1.5.5.tgz#5d26a57c07679142f9299a0f9177aa9f9cc95879"
@@ -8343,6 +8348,11 @@ vue-router@^3.2.0:
   version "3.4.3"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.4.3.tgz#fa93768616ee338aa174f160ac965167fa572ffa"
   integrity sha512-BADg1mjGWX18Dpmy6bOGzGNnk7B/ZA0RxuA6qedY/YJwirMfKXIDzcccmHbQI0A6k5PzMdMloc0ElHfyOoX35A==
+
+vue-script2@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/vue-script2/-/vue-script2-2.1.0.tgz#8e480dc6052c8cdf2aa0ec112efc80f31ddc3522"
+  integrity sha512-EDUOjQBFvhkJXwmWuUR9ijlF7/4JtmvjXSKaHSa/LNTMy9ltjgKgYB68aqlxgq8ORdSxowd5eo24P1syjZJnBA==
 
 vue-social-sharing@^3.0.0-beta.11:
   version "3.0.0-beta.11"

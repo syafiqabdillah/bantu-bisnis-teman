@@ -66,7 +66,9 @@
       <b-spinner>Loading...</b-spinner>
     </div>
     <div class="mt-2 mb-4" align="center">
-      <a href="javascript:void(0);" id="see-more" v-on:click="seeMore">see more</a>
+      <a href="javascript:void(0);" id="see-more" v-on:click="seeMore"
+        >see more</a
+      >
     </div>
   </div>
 </template>
@@ -109,6 +111,7 @@ export default {
         setTimeout(() => {
           if (this.searchQuery !== "") {
             this.loading = true;
+            this.productList = [];
             axios
               .get(`${baseUrl}/search-products/${this.searchQuery}`)
               .then((res) => {
@@ -159,16 +162,18 @@ export default {
   },
   computed: {
     computedProductList() {
+      if (this.productList == null) return [];
       return this.productList.filter((product) => {
+        const lowerSearchQuery = this.searchQuery.toLowerCase();
         const queryInNamaProduk = product.namaProduk
           .toLowerCase()
-          .includes(this.searchQuery);
+          .includes(lowerSearchQuery);
         const queryInNamaToko = product.namaToko
           .toLowerCase()
-          .includes(this.searchQuery);
+          .includes(lowerSearchQuery);
         const queryInNamaSeller = product.namaSeller
           .toLowerCase()
-          .includes(this.searchQuery);
+          .includes(lowerSearchQuery);
         return queryInNamaProduk || queryInNamaToko || queryInNamaSeller;
       });
     },
@@ -310,10 +315,10 @@ a:visited {
 }
 #see-more {
   color: #424874;
-  font-size: 1.0rem;
+  font-size: 1rem;
 }
 #search-query {
-  font-size: 1.0rem;
+  font-size: 1rem;
 }
 @media (max-width: 480px) {
   .jumbo {

@@ -7,14 +7,19 @@ import store from "./store";
 import { BootstrapVue, IconsPlugin, BIcon } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
-// social sharing 
-import VueSocialSharing from 'vue-social-sharing'
- 
-Vue.use(VueSocialSharing);
+// social sharing
+import VueSocialSharing from "vue-social-sharing";
+// adsense 
+// import Ads from "vue-google-adsense";
 
+Vue.use(VueSocialSharing);
+// Vue.use(require('vue-script2'))
+// Vue.use(Ads.Adsense)
+// Vue.use(Ads.InArticleAdsense)
+// Vue.use(Ads.InFeedAdsense)
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
-Vue.component("BIcon", BIcon); 
+Vue.component("BIcon", BIcon);
 Vue.config.productionTip = false;
 
 new Vue({

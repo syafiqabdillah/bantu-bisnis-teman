@@ -89,6 +89,9 @@ export default {
       return true;
     },
     open(olshop, username) {
+      if (username.includes("@")){
+        username = username.substring(1);
+      }
       window.open(`${this.baseOlshopUrl[olshop]}${username}`, "_blank");
     },
     priceFormat(price) {
