@@ -3,7 +3,7 @@
     <div id="copyright">
       © 2020, Bantuin Bisnis Teman.
     </div>
-    <router-link class="bibit-link" to="/bukan-admin">Admin</router-link>
+    <router-link v-if="isAdmin" class="bibit-link" to="/bukan-admin">Admin</router-link>
     <div id="contact">
       Developer contact: abdillah.syafiq@gmail.com
     </div>
