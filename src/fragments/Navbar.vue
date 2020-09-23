@@ -20,6 +20,11 @@
           <b-nav-item>
             <router-link to="/">Beranda</router-link>
           </b-nav-item>
+
+          <b-nav-item>
+            <router-link to="/stores">Semua Toko</router-link>
+          </b-nav-item>
+
           <b-nav-item>
             <router-link to="/saran">Saran</router-link>
           </b-nav-item>
@@ -49,7 +54,7 @@ import {
   setCookie,
   isLoggedIn,
   isMobile,
-  getJwtData
+  getJwtData,
 } from "../mixins/index";
 export default {
   name: "Navbar",

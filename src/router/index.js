@@ -43,6 +43,11 @@ const routes = [
     component: () => import("../views/Saran/Saran.vue"),
   },
   {
+    path: "/stores",
+    name: "Stores",
+    component: () => import("../views/DaftarToko/DaftarToko.vue")
+  },
+  {
     path: "*",
     redirect: "/"
   }
