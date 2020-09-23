@@ -10,7 +10,7 @@
       <b-card
         class="toko"
         v-on:click="goToStore(toko.id)"
-        v-for="toko in dummyListToko"
+        v-for="toko in listToko"
         :key="toko.id"
       >
         <span class="nama-toko">
@@ -41,27 +41,6 @@ export default {
   data() {
     return {
       listToko: [],
-      dummyDictToko: {
-        21: {
-          id: 21,
-          list_kategori: ["Aksesoris ", "Healthy Life", "Pakaian", "Minuman", "Jajanan", "Hiya-hiya"],
-          nama_toko: "nildotco",
-          nama_user: "Nildotco",
-        },
-        24: {
-          id: 24,
-          list_kategori: ["Aksesoris "],
-          nama_toko: "Hati ke Hati ",
-          nama_user: "Zahrotu A’yunin B",
-        },
-        25: {
-          id: 25,
-          list_kategori: ["Makanan"],
-          nama_toko: "pempek_ane",
-          nama_user: "andamiltf",
-        },
-      },
-      dummyListToko: [],
       loading: true,
     };
   },
@@ -72,16 +51,9 @@ export default {
         this.listToko.push(dict[key]);
       }
     });
-
-    // dummy
-    const dict = this.dummyDictToko;
-    for (const key in dict) {
-      this.dummyListToko.push(dict[key]);
-    }
   },
   methods: {
     goToStore(toko_id) {
-      // location.href = `/store/${toko_id}`;
       window.open(`/store/${toko_id}`, "_blank");
     },
   },
