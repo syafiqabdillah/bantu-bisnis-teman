@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h2 class="user-mgt-title">User Management</h2>
-    <b-table :items="listUser" :fields="fieldTableUser">
+    <h3 class="user-mgt-title">Users</h3>
+    <b-table small responsive :items="listUser" :fields="fieldTableUser">
       <template v-slot:cell(action)="row">
-        <div align="center">
+        <div>
           <b-form-checkbox
             v-model="row.item.active"
             switch
@@ -18,8 +18,8 @@
 
 <script>
 import axios from "axios";
-import { baseUrl } from "../../config/index.js";
-import { getJwtData, getCookie } from "../../mixins/index.js";
+import { baseUrl } from "../../config";
+import { getJwtData, getCookie } from "../../mixins";
 
 export default {
   name: "UserManagement",
@@ -51,4 +51,5 @@ export default {
 .user-mgt-title {
   text-align: center;
 }
+
 </style>

@@ -49,6 +49,7 @@ import {
   setCookie,
   isLoggedIn,
   isMobile,
+  getJwtData
 } from "../mixins/index";
 export default {
   name: "Navbar",

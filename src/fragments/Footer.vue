@@ -3,6 +3,7 @@
     <div id="copyright">
       © 2020, Bantuin Bisnis Teman.
     </div>
+    <router-link class="bibit-link" to="/bukan-admin">Admin</router-link>
     <div id="contact">
       Developer contact: abdillah.syafiq@gmail.com
     </div>
@@ -10,8 +11,14 @@
 </template>
 
 <script>
+import { getJwtData } from '../mixins'
 export default {
   name: "Footer",
+  computed: {
+    isAdmin() {
+      getJwtData().email === "syafiq.abdillah@ui.ac.id"
+    }
+  }
 };
 // f3e6e3
 </script>

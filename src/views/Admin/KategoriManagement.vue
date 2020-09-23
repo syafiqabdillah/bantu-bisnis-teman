@@ -1,17 +1,18 @@
 <template>
   <div>
     <div class="table-header">
-      <h2>Kategori</h2>
+      <h3>Kategori</h3>
       <b-button
         v-on:click="showAddKategoriModal"
-        class="mb-3"
-        variant="primary"
+        class="mb-3 bibit-btn-small"
       >
         Tambah Kategori
       </b-button>
     </div>
 
     <b-table
+      responsive
+      small
       :items="listKategori"
       :fields="fieldTableKategori"
       :sort-by.sync="sortBy"
@@ -163,6 +164,11 @@ export default {
   justify-content: space-between;
   padding-left: 32px;
   padding-right: 32px;
+}
+@media(max-width: 480px){
+  .table-header {
+    flex-direction: column;
+  }
 }
 .active-cell {
   display: flex;

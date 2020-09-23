@@ -5,24 +5,36 @@
         Admin Lalala~
       </h2>
     </div>
-    <b-row>
-      <b-col>
-        <div class="user-mgt-container">
-          <div class="form-register">
-            <b-card>
-              <UserManagement />
+    <div class="body-container">
+      <b-row>
+        <b-col>
+          <div class="user-mgt-container">
+            <div class="form-register">
+              <b-card class="mb-2">
+                <UserManagement />
+              </b-card>
+            </div>
+          </div>
+        </b-col>
+        <b-col>
+          <div class="kategori-mgt-container">
+            <b-card class="mb-2">
+              <KategoriManagement />
             </b-card>
           </div>
-        </div>
-      </b-col>
-      <b-col>
-        <div class="kategori-mgt-container">
-          <b-card>
-            <KategoriManagement />
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col cols="12" md="12" lg="6">
+          <b-card class="mb-2">
+            <SaranManagement />
           </b-card>
-        </div>
-      </b-col>
-    </b-row>
+        </b-col>
+        <b-col cols="12" md="12" lg="6">
+          <b-card class="mb-2"></b-card>
+        </b-col>
+      </b-row>
+    </div>
   </div>
 </template>
 
@@ -30,11 +42,13 @@
 import { getJwtData, getCookie } from "../../mixins/index.js";
 import UserManagement from "./UserManagement";
 import KategoriManagement from "./KategoriManagement";
+import SaranManagement from "./SaranManagement";
 export default {
   name: "Admin",
   components: {
     UserManagement,
-    KategoriManagement
+    KategoriManagement,
+    SaranManagement,
   },
   created() {
     // check if admin
@@ -80,9 +94,12 @@ export default {
 .jumbo-title {
   font-size: 2.5rem;
 }
-.user-mgt-container,
-.toko-mgt-container,
-.kategori-mgt-container {
-  margin: 16px;
+.body-container {
+  margin: 32px;
+}
+@media (max-width: 480px) {
+  .body-container {
+    margin: 8px;
+  }
 }
 </style>
