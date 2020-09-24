@@ -57,17 +57,8 @@ export default {
     };
   },
   created() {
-    // axios
-    //   .get(`${baseUrl}/toko`)
-    //   .then((res) => {
-    //     const dict = res.data["list_toko"];
-    //     for (const key in dict) {
-    //       this.listToko.push(dict[key]);
-    //     }
-    //   })
-    //   .finally(() => (this.loading = false));
     axios
-      .get(`https://bantuin-bisnis-teman-api.herokuapp.com/toko`)
+      .get(`${baseUrl}/toko`)
       .then((res) => {
         const dict = res.data["list_toko"];
         for (const key in dict) {
@@ -116,7 +107,7 @@ export default {
 .nama-toko {
   font-size: 1.1rem;
   max-lines: 2;
-  overflow:hidden;
+  overflow: hidden;
 }
 .nama-user {
   color: grey;
