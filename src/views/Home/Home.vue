@@ -225,7 +225,12 @@ export default {
       this.loading = true;
       // load more products
       axios
-        .get(`${baseUrl}/search-products-by-category/${this.selectedCategory}`)
+        .post(
+          `${baseUrl}/search-products-by-category/${this.selectedCategory}`,
+          {
+            search_query: this.searchQuery,
+          }
+        )
         .then((res) => {
           this.productList = this.productList.concat(res.data.data);
         })
