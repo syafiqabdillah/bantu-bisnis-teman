@@ -45,6 +45,14 @@
   background-color: var(--bibit-primary) !important;
 }
 
+.bibit-secondary {
+  background-color: var(--bibit-secondary) !important;
+}
+
+.bibit-accent {
+  background-color: var(--bibit-accent) !important;
+}
+
 .bibit-bg {
   background-color: var(--bibit-bg);
 }

@@ -1,33 +1,45 @@
 <template>
   <div>
     <div class="jumbo bibit-primary">
-      <h1 class="jumbo-title">
-        Semua Toko
-      </h1>
+      <h2 class="jumbo-title">
+        <b-icon class="seen-icon" icon="shop"></b-icon>
+        Para Pejuang
+      </h2>
+    </div>
+
+    <div align="center" class="bibit-spinner mt-4" v-if="loading">
+      <b-spinner>Loading...</b-spinner>
     </div>
 
     <div class="toko-container">
       <b-card
-        class="toko"
         v-on:click="goToStore(toko.id)"
         v-for="toko in listToko"
         :key="toko.id"
       >
-        <span class="nama-toko">
-          {{ toko.nama_toko }}
-        </span>
-
-        <br />
-        <span class="nama-user">
-          <small>
-            <b-icon icon="person-fill"></b-icon> {{ toko.nama_user }}</small
-          >
-        </span>
-
-        <br />
-        <span class="kategori" v-for="kat in toko.list_kategori" :key="kat.id">
-          <b-badge class="badge-kategori" variant="info">{{ kat }}</b-badge>
-        </span>
+        <div class="toko">
+          <div class="nama-toko">
+            {{ toko.nama_toko }}
+          </div>
+          <div>
+            <div class="nama-user">
+              <small>
+                <b-icon icon="person-fill"></b-icon> {{ toko.nama_user }}</small
+              >
+            </div>
+            <div class="kategori-container">
+              <div
+                class="kategori"
+                v-for="kat in toko.list_kategori"
+                :key="kat.id"
+              >
+                <b-badge class="badge-kategori bibit-secondary">{{
+                  kat
+                }}</b-badge>
+              </div>
+            </div>
+          </div>
+        </div>
       </b-card>
     </div>
   </div>
@@ -45,12 +57,24 @@ export default {
     };
   },
   created() {
-    axios.get(`${baseUrl}/toko`).then((res) => {
-      const dict = res.data["list_toko"];
-      for (const key in dict) {
-        this.listToko.push(dict[key]);
-      }
-    });
+    // axios
+    //   .get(`${baseUrl}/toko`)
+    //   .then((res) => {
+    //     const dict = res.data["list_toko"];
+    //     for (const key in dict) {
+    //       this.listToko.push(dict[key]);
+    //     }
+    //   })
+    //   .finally(() => (this.loading = false));
+    axios
+      .get(`https://bantuin-bisnis-teman-api.herokuapp.com/toko`)
+      .then((res) => {
+        const dict = res.data["list_toko"];
+        for (const key in dict) {
+          this.listToko.push(dict[key]);
+        }
+      })
+      .finally(() => (this.loading = false));
   },
   methods: {
     goToStore(toko_id) {
@@ -61,6 +85,9 @@ export default {
 </script>
 
 <style scoped>
+.card-body {
+  padding: 8px;
+}
 .jumbo {
   padding-left: 128px;
   padding-right: 128px;
@@ -69,24 +96,36 @@ export default {
   color: white;
 }
 .jumbo-title {
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 .toko-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
+  grid-template-columns: repeat(auto-fill, 230px);
+  justify-content: center;
   row-gap: 8px;
   column-gap: 8px;
-  justify-content: space-around;
-  margin: 32px;
+  margin: 32px 128px;
 }
 .toko {
   cursor: pointer;
+  display: flex;
+  height: 100px;
+  flex-direction: column;
+  justify-content: center;
 }
 .nama-toko {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  max-lines: 2;
+  overflow:hidden;
 }
 .nama-user {
   color: grey;
+}
+.kategori-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4px;
 }
 .kategori {
   font-size: 0.8rem;
@@ -98,8 +137,7 @@ export default {
 }
 @media (max-width: 480px) {
   .jumbo {
-    padding: 32px;
-    padding-top: 0px;
+    padding: 0 32px 16px;
   }
   .toko-container {
     display: grid;
