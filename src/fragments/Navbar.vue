@@ -22,7 +22,7 @@
           </b-nav-item>
 
           <b-nav-item>
-            <router-link to="/stores">Para Pejuang</router-link>
+            <router-link to="/stores">Para Pemberani</router-link>
           </b-nav-item>
 
           <b-nav-item>

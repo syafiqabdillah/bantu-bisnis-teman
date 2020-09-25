@@ -3,7 +3,7 @@
     <div class="jumbo bibit-primary">
       <h2 class="jumbo-title">
         <b-icon class="seen-icon" icon="shop"></b-icon>
-        Para Pejuang
+        Para Pemberani
       </h2>
     </div>
 
@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     goToStore(toko_id) {
-      window.open(`/store/${toko_id}`, "_blank");
+      this.$router.push(`/store/${toko_id}`);
     },
   },
 };
