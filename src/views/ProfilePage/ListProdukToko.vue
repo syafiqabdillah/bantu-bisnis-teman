@@ -17,7 +17,7 @@
     </b-card>
 
     <b-modal
-      title="Ubah Produk"
+      title="Update Product"
       ref="product-detail-modal"
       centered
       @ok="updateProduk"
@@ -26,7 +26,7 @@
         <b-form-group
           label-cols="4"
           label-cols-lg="3"
-          label="Nama Produk"
+          label="Product Name"
           label-for="add-produk-nama"
         >
           <b-form-input
@@ -39,7 +39,7 @@
         <b-form-group
           label-cols="4"
           label-cols-lg="3"
-          label="Kategori"
+          label="Category"
           label-for="add-produk-kategori"
         >
           <b-form-select
@@ -52,9 +52,9 @@
         <b-form-group
           label-cols="4"
           label-cols-lg="3"
-          label="Harga"
+          label="Price"
           label-for="add-produk-harga"
-          description="Masukkan 0 bila harga tidak menentu"
+          description="Enter 0 if the price changes frequently"
         >
           <b-form-input
             id="add-produk-harga"
@@ -67,15 +67,15 @@
         <b-form-group
           label-cols="4"
           label-cols-lg="3"
-          label="Gambar"
+          label="Image"
           label-for="add-produk-image"
         >
           <b-form-file
             class="upload-file text-nowrap text-truncate"
             id="add-produk-image"
             v-model="new_image"
-            placeholder="Ganti gambar..."
-            drop-placeholder="Taruh gambar..."
+            placeholder="Change product image..."
+            drop-placeholder="Put image..."
             accept="image/*"
             required
           ></b-form-file>
@@ -259,9 +259,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fill, 170px);
   justify-content: space-around;
-  margin: 20px;
-  margin-left: 32px;
-  margin-right: 32px;
+  margin: 20px 32px 20px;
 }
 .product-img-container,
 .product-img-container-grey {

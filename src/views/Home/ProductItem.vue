@@ -24,8 +24,8 @@
         {{ product.namaSeller }}
       </div>
       <div class="product-seen">
-        <b-icon class="seen-icon" icon="eye-fill"></b-icon>Telah dilihat
-        {{ view_sum }} kali
+        <b-icon class="seen-icon" icon="eye-fill"></b-icon>Seen
+        {{ view_sum }} times
       </div>
     </div>
   </div>

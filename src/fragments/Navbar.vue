@@ -10,7 +10,7 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item class="greetings" v-if="isLoggedIn()">
-            <router-link to="/profile">Halo, {{ nama }}</router-link>
+            <router-link to="/profile">My Store</router-link>
           </b-nav-item>
 
           <b-nav-item id="divider" v-if="isLoggedIn() && !isMobileSreen"
@@ -18,15 +18,15 @@
           >
 
           <b-nav-item>
-            <router-link to="/">Beranda</router-link>
+            <router-link to="/">Home</router-link>
           </b-nav-item>
 
           <b-nav-item>
-            <router-link to="/stores">Para Pemberani</router-link>
+            <router-link to="/stores">Stores</router-link>
           </b-nav-item>
 
           <b-nav-item>
-            <router-link to="/saran">Saran</router-link>
+            <router-link to="/stores">Donate</router-link>
           </b-nav-item>
 
           <b-nav-item v-if="!isLoggedIn()">

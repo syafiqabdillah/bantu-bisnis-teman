@@ -23,8 +23,8 @@
         }}
       </div>
       <div class="product-seen">
-        <b-icon class="seen-icon" icon="eye-fill"></b-icon>Telah dilihat
-        {{ view_sum }} kali
+        <b-icon class="seen-icon" icon="eye-fill"></b-icon>Seen
+        {{ view_sum }} times
       </div>
     </div>
   </div>
@@ -108,7 +108,6 @@ export default {
   filter: grayscale(100%);
 }
 #product-detail {
-  padding: 20px;
-  padding-top: 10px;
+  padding: 10px;
 }
 </style>

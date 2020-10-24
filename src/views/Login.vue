@@ -5,7 +5,7 @@
         <b-col cols="12" md="12" lg="6">
           <div class="login-image bibit-text-dark">
             <h2>Bantuin Bisnis Teman</h2>
-            <p>Kalau bisa beli lewat teman sendiri, kenapa nggak?</p>
+            <p>Kalau bisa beli di teman sendiri, kenapa nggak?</p>
             <br>
             <img :src="imageSource" alt="Two humans" />
           </div>
@@ -16,7 +16,7 @@
               <b-form @submit="onSubmit" @reset="onReset">
                 <b-form-group
                   id="input-group-email"
-                  label="Email:"
+                  label="Email"
                   label-for="input-1"
                 >
                   <b-form-input
@@ -30,7 +30,7 @@
 
                 <b-form-group
                   id="input-group-password"
-                  label="Password:"
+                  label="Password"
                   label-for="input-2"
                 >
                   <b-form-input
@@ -44,7 +44,7 @@
                 <b-button class="bibit-btn btn-login" block type="submit">Login</b-button>
               </b-form>
               <div class="register-now">
-                <a class="bibit-link-dark" href="/register">Belum punya akun? Daftar sekarang</a>
+                <a class="bibit-link-dark" href="/register">Don't have an account ? Register for free now !</a>
               </div>
               <!-- <hr>
               <div align="center" v-on:click="getGoogleToken">

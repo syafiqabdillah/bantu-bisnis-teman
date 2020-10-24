@@ -7,7 +7,7 @@
             <b-form-group
               label-cols="3"
               label-cols-lg="3"
-              label="Alamat"
+              label="Address"
               label-for="profile-alamat-toko"
               :label-size="isMobileScreen ? 'sm' : 'md'"
             >
@@ -22,7 +22,7 @@
             <b-form-group
               label-cols="3"
               label-cols-lg="3"
-              label="No HP"
+              label="Phone"
               label-for="profile-hp-toko"
               :label-size="isMobileScreen ? 'sm' : 'md'"
             >
@@ -35,7 +35,7 @@
             </b-form-group>
 
             <div class="mt-1 mb-2">
-              Cek langsung tokonya di
+              Check out the store at
             </div>
 
             <div class="social-media">
@@ -72,11 +72,11 @@
             </div>
 
             <small class="ecom-clicked">
-              Telah dikunjungi {{ ecomViewSum }} kali
+              Clicked {{ ecomViewSum }} times
             </small>
           </b-form>
           <div align="center">
-            Bagikan ke teman melalui
+            Share this store with friends
             <div class="share-social">
               <div
                 class="share-button"
@@ -197,8 +197,11 @@ export default {
   margin: 32px;
   margin-right: 0px;
 }
+.card-body {
+  padding: 0px;
+}
 .profile-toko {
-  margin: 0px;
+  margin: 32px;
 }
 .spinner {
   color: #c3aed6;

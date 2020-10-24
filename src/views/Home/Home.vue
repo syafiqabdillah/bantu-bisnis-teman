@@ -8,7 +8,7 @@
         -Keluarga Besar Asy Syaamil & DHBS Bontang-
       </p>
       <p class="jumbo-subtitle">
-        Kalau bisa beli lewat teman sendiri, kenapa nggak?
+        Kalau bisa beli di teman sendiri, kenapa nggak?
       </p>
       <b-form>
         <b-form-input
@@ -42,7 +42,7 @@
       align="center"
       v-if="!loading && computedProductList.length === 0"
     >
-      Data kosong, peluang bisnis nih :>
+      No products match the filter
     </div>
 
     <div class="product-container">
@@ -65,13 +65,13 @@
     <div v-if="loading">
       <b-spinner>Loading...</b-spinner>
     </div>
-    <div class="mt-2 mb-4" align="center">
+    <div class="mt-3 mb-3" align="center">
       <a
         class="bibit-link-dark"
         href="javascript:void(0);"
         id="see-more"
         v-on:click="seeMore"
-        >see more</a
+        >load more products, please !</a
       >
     </div>
   </div>
@@ -267,10 +267,9 @@ export default {
   justify-content: space-around;
   margin-left: 108px;
   margin-right: 108px;
-  margin-top: 32px;
 }
 .product-item {
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 .card-body {
   padding: 0px;

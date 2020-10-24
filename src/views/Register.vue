@@ -5,7 +5,7 @@
         <b-col cols="12" md="12" lg="6">
           <div class="login-image bibit-text-dark">
             <h2>Bantuin Bisnis Teman</h2>
-            <p>Kalau bisa beli lewat teman sendiri, kenapa nggak?</p>
+            <p>Kalau bisa beli di teman sendiri, kenapa nggak?</p>
             <img :src="imageSource" alt="One person" />
           </div>
         </b-col>
@@ -15,7 +15,7 @@
               <b-form @submit="onSubmit" @reset="onReset">
                 <b-form-group
                   id="input-group-password-confirm"
-                  label="Nama:"
+                  label="Name"
                   label-for="input-4"
                 >
                   <b-form-input
@@ -30,7 +30,7 @@
 
                 <b-form-group
                   id="input-group-email"
-                  label="Email:"
+                  label="Email"
                   label-for="input-1"
                 >
                   <b-form-input
@@ -43,13 +43,13 @@
                     placeholder="Your email"
                   ></b-form-input>
                   <b-form-invalid-feedback>
-                    {{ !emailAvailable ? 'Email sudah terdaftar' : 'Email tidak valid'}}
+                    {{ !emailAvailable ? 'Email is already registered' : 'Email is invalid'}}
                   </b-form-invalid-feedback>
                 </b-form-group>
 
                 <b-form-group
                   id="input-group-password"
-                  label="Password:"
+                  label="Password"
                   label-for="input-2"
                 >
                   <b-form-input
@@ -62,7 +62,7 @@
                     :state="passwordValid"
                   ></b-form-input>
                   <b-form-invalid-feedback id="input-live-feedback">
-                    Password setidaknya 8 karakter
+                    Password needs to be at least 8 characters long
                   </b-form-invalid-feedback>
                 </b-form-group>
 
@@ -82,7 +82,7 @@
                     :state="passwordMatches"
                   ></b-form-input>
                   <b-form-invalid-feedback id="input-live-feedback">
-                    Konfirmasi password tidak sesuai
+                    Password confirmation doesn't match
                   </b-form-invalid-feedback>
                 </b-form-group>
 
@@ -91,7 +91,7 @@
                 >
               </b-form>
               <div class="login-now">
-                <a class="bibit-link-dark" href="/login">Sudah punya akun? Login sekarang</a>
+                <a class="bibit-link-dark" href="/login">Already have an account? Login now</a>
               </div>
             </div>
           </b-card>

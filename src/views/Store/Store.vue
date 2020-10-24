@@ -2,9 +2,8 @@
   <div>
     <div class="jumbo bibit-primary" v-if="!loading">
       <h2 class="jumbo-title">
-        <b-icon font-scale="2" icon="shop"></b-icon>
-        <br />
-        <span class="title-nama-toko"> {{ toko.nama }}</span>
+        <b-icon class="seen-icon" icon="shop"></b-icon>
+        {{ toko.nama }} <br />
       </h2>
     </div>
 

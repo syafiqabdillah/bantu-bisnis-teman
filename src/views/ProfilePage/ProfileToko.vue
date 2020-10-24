@@ -7,7 +7,7 @@
             <b-form-group
               label-cols="3"
               label-cols-lg="3"
-              label="Nama"
+              label="Name"
               label-for="profile-nama-toko"
               :label-size="isMobileScreen ? 'sm' : 'md'"
             >
@@ -21,7 +21,7 @@
             <b-form-group
               label-cols="3"
               label-cols-lg="3"
-              label="Alamat"
+              label="Address"
               label-for="profile-alamat-toko"
               :label-size="isMobileScreen ? 'sm' : 'md'"
             >
@@ -35,7 +35,7 @@
             <b-form-group
               label-cols="3"
               label-cols-lg="3"
-              label="No HP"
+              label="Phone"
               label-for="profile-hp-toko"
               :label-size="isMobileScreen ? 'sm' : 'md'"
             >
@@ -100,7 +100,7 @@
             </b-form-group>
 
             <b-button class="btn-update bibit-btn-small" block type="submit"
-              >Update Toko</b-button
+              >Update Store</b-button
             >
           </b-form>
         </div>
@@ -126,6 +126,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.card-body {
+  padding: 0px;
+}
 #kiri {
   margin-bottom: 16px;
 }

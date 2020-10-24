@@ -3,7 +3,7 @@
     <div class="jumbo bibit-primary">
       <h2 class="jumbo-title">
         <b-icon class="seen-icon" icon="shop"></b-icon>
-        Para Pemberani
+        All Stores
       </h2>
     </div>
 

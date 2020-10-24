@@ -3,8 +3,7 @@
     <div class="jumbo bibit-primary">
       <h2 class="jumbo-title">
         <b-icon class="seen-icon" icon="shop"></b-icon>
-        Profil Toko <br />
-        <span class="title-nama-toko"> "{{ profile.nama }}"</span>
+        {{ profile.nama }} <br />
       </h2>
     </div>
 
@@ -25,7 +24,7 @@
 
     <b-modal ref="update-toko" centered hide-header hide-footer>
       <div align="center">
-        <b-spinner class="spinner">Update Toko...</b-spinner>
+        <b-spinner class="spinner">Updating Store...</b-spinner>
       </div>
     </b-modal>
   </div>

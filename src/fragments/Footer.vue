@@ -1,13 +1,13 @@
 <template>
   <div class="footer bibit-footer">
     <div id="copyright">
-      © 2020, Bantuin Bisnis Teman.
+      ©2020, Bantuin Bisnis Teman.
     </div>
     <router-link v-if="isAdmin" class="bibit-link" to="/bukan-admin"
-      >Admin</router-link
-    >
+        >Admin</router-link
+      >
     <div id="contact">
-      Developer contact: abdillah.syafiq@gmail.com
+      Contact us at abdillah.syafiq@gmail.com
     </div>
   </div>
 </template>
@@ -47,6 +47,7 @@ export default {
 @media (max-width: 480px) {
   .footer {
     flex-direction: column;
+    height: 75px;
   }
 }
 </style>

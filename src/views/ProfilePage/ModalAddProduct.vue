@@ -2,13 +2,13 @@
   <div>
     <div align="center">
       <b-button class="add-product bibit-btn-small" block v-on:click="showFormAddProduct()">
-        <b-icon class="add-product-icon" icon="plus"></b-icon>Tambah Produk
+        <b-icon class="add-product-icon" icon="plus"></b-icon>Add Product
       </b-button>
     </div>
 
     <b-modal
       ref="modal-add-product"
-      title="Tambah Produk"
+      title="Add Product"
       @ok="onSubmit"
       @hidden="onReset"
       centered
@@ -18,7 +18,7 @@
           <b-form-group
             label-cols="4"
             label-cols-lg="3"
-            label="Nama Produk"
+            label="Product Name"
             label-for="add-produk-nama"
           >
             <b-form-input
@@ -31,7 +31,7 @@
           <b-form-group
             label-cols="4"
             label-cols-lg="3"
-            label="Kategori"
+            label="Category"
             label-for="add-produk-kategori"
           >
             <b-form-select
@@ -45,9 +45,9 @@
           <b-form-group
             label-cols="4"
             label-cols-lg="3"
-            label="Harga"
+            label="Price"
             label-for="add-produk-harga"
-            description="Masukkan 0 bila harga tidak menentu"
+            description="Enter 0 if the price changes frequently"
           >
             <b-form-input
               id="add-produk-harga"
@@ -60,15 +60,15 @@
           <b-form-group
             label-cols="4"
             label-cols-lg="3"
-            label="Gambar"
+            label="Image"
             label-for="add-produk-image"
           >
             <b-form-file
               class="upload-file text-nowrap text-truncate"
               id="add-produk-image"
               v-model="formAddProduct.image"
-              placeholder="Pilih gambar..."
-              drop-placeholder="Taruh gambar..."
+              placeholder="Choose an image..."
+              drop-placeholder="Put image..."
               accept="image/*"
               required
             ></b-form-file>
