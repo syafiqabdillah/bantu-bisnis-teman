@@ -3,7 +3,7 @@
     <div id="copyright">
       ©2020, Bantuin Bisnis Teman.
     </div>
-    <router-link v-if="isAdmin" class="bibit-link" to="/bukan-admin"
+    <router-link id="admin-btn" v-if="isAdmin" class="bibit-link" to="/bukan-admin"
         >Admin</router-link
       >
     <div id="contact">
@@ -40,13 +40,18 @@ export default {
   padding-bottom: 4px;
 }
 #copyright,
-#contact {
+#contact,
+#admin-btn {
   flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 480px) {
   .footer {
     flex-direction: column;
+    justify-content: space-around;
     height: 75px;
   }
 }

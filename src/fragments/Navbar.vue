@@ -26,7 +26,7 @@
           </b-nav-item>
 
           <b-nav-item>
-            <router-link to="/stores">Donate</router-link>
+            <router-link to="/donate">Donate</router-link>
           </b-nav-item>
 
           <b-nav-item v-if="!isLoggedIn()">
@@ -66,7 +66,7 @@ export default {
     },
     navBrand() {
       const path = this.$route.path;
-      if (path.includes("login") || path.includes("register")) {
+      if (path.includes("login") || path.includes("register") || path.includes("donate")) {
         return path.charAt(1).toUpperCase() + path.slice(2);
       }
       return "";
