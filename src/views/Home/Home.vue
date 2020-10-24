@@ -38,14 +38,14 @@
     </div>
 
     <div
-      class="empty-product"
+      class="empty-product mt-3"
       align="center"
       v-if="!loading && computedProductList.length === 0"
     >
       No products match the filter
     </div>
 
-    <div class="product-container">
+    <div class="product-container" v-if="!loading">
       <b-card
         class="product-item"
         v-for="product in computedProductList"
@@ -62,7 +62,7 @@
       </b-modal>
     </div>
 
-    <div v-if="loading">
+    <div v-if="loading" class="mt-3">
       <b-spinner>Loading...</b-spinner>
     </div>
     <div class="mt-3 mb-3" align="center">
