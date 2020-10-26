@@ -45,7 +45,7 @@
       No products match the filter
     </div>
 
-    <div class="product-container" v-if="!loading">
+    <div class="product-container">
       <b-card
         class="product-item"
         v-for="product in computedProductList"
@@ -237,7 +237,9 @@ export default {
         .catch((e) => {
           alert(e);
         })
-        .finally(() => (this.loading = false));
+        .finally(() => {
+          this.loading = false;
+        });
     },
     searchByCategory(category_id) {
       this.loading = true;
