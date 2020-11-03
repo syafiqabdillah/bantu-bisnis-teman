@@ -7,6 +7,10 @@
       </h2>
     </div>
 
+    <div class="inactive-user-msg" v-if="notActive">
+      This account hasn't been approved by the admin.
+    </div>
+
     <div class="profile-container">
       <b-row>
         <b-col cols="12" md="5" lg="5">
@@ -17,7 +21,11 @@
           <div v-if="loading" align="center">
             <b-spinner variant="primary"></b-spinner>
           </div>
-          <ListProdukToko v-if="!loading" :listProduct="listProduct" :profile="profile" />
+          <ListProdukToko
+            v-if="!loading"
+            :listProduct="listProduct"
+            :profile="profile"
+          />
         </b-col>
       </b-row>
     </div>
@@ -56,6 +64,7 @@ export default {
       },
       listProduct: [],
       loading: true,
+      notActive: false,
     };
   },
   mounted() {
@@ -67,6 +76,10 @@ export default {
       const token = getCookie("token");
       const toko_id = parseJwt(token).toko_id;
       const user_id = parseJwt(token).user_id;
+      // check if user is active
+      axios
+        .get(`${baseUrl}/user-is-active/${user_id}`)
+        .then((res) => (this.notActive = !res.data.data.is_active));
       // get profile data
       axios
         .get(`${baseUrl}/toko/${user_id}`)
@@ -133,7 +146,16 @@ export default {
 .title-nama-toko {
   font-size: 2.75rem;
 }
+.inactive-user-msg {
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media (max-width: 480px) {
+  .inactive-user-msg {
+    font-size: 0.7rem;
+  }
   #avatar-toko {
     height: 100px;
   }

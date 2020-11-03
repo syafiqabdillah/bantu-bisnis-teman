@@ -55,7 +55,7 @@ import {
   isLoggedIn,
   isMobile,
   getJwtData,
-} from "../mixins/index";
+} from "../mixins";
 export default {
   name: "Navbar",
   computed: {
@@ -66,7 +66,11 @@ export default {
     },
     navBrand() {
       const path = this.$route.path;
-      if (path.includes("login") || path.includes("register") || path.includes("donate")) {
+      if (
+        path.includes("login") ||
+        path.includes("register") ||
+        path.includes("donate")
+      ) {
         return path.charAt(1).toUpperCase() + path.slice(2);
       }
       return "";
