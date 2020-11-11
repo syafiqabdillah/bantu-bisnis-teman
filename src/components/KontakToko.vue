@@ -22,12 +22,12 @@
       <b-icon icon="person-fill" /> {{ product.namaSeller }}
       <b-icon icon="geo-alt" /> {{ toko.alamat }}
     </p>
-    <p>
+    <!-- <p>
       <b-icon icon="telephone-fill"></b-icon>
       <span id="nohp">
         {{ toko.nohp }}
       </span>
-    </p>
+    </p> -->
     <div class="social-media">
       <div id="tokopedia" v-if="linkValid('tokopedia', toko.tokopedia)">
         <img

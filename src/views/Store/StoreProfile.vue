@@ -19,7 +19,7 @@
               ></b-form-input>
             </b-form-group>
 
-            <b-form-group
+            <!-- <b-form-group
               label-cols="3"
               label-cols-lg="3"
               label="Phone"
@@ -32,7 +32,7 @@
                 disabled
                 :size="isMobileScreen ? 'sm' : 'md'"
               ></b-form-input>
-            </b-form-group>
+            </b-form-group> -->
 
             <div class="mt-1 mb-2">
               Check out the store at
